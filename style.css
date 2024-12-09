@@ -1,0 +1,99 @@
+/*best practice to code create a universal selector and do margin 0 padding 0 and 3rd important chiz box size as border box isse content ka size chhota ho jayega  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+    /* hum chahte hai ki wrapper ke andar sara ka sara content aaye to kya mai bol skta wrapper ki jo height hogi wo viewport ki height ke equal hogi tabhi content aayega wrapper ki height view port ki height ke equal hogi to maximum height hoti hai viewport 100vh  */
+  height: 100vh;
+  /* very important we dont want to scroll the picture in X direction thats why give parameter as a hidden  */
+  overflow-x: hidden;
+  /* very important we want to scroll in y axis thats why we do auto in this as a parameter */
+  overflow-y: auto;
+  /* for creating 3d efect we use perspective */
+  perspective: 10px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  z-index: -1;
+
+  .background {
+    transform: translateZ(-40px) scale(5);
+  }
+  .foreground {
+    transform: translateZ(-20px) scale(3);
+  }
+
+  h1 {
+    position: absolute;
+    top: 7rem;
+    font-size: 10rem;
+    letter-spacing: 4px;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+section {
+  background-color: rgb(45, 45, 45);
+  color: white;
+  padding: 5rem 0;
+}
+.secHeading {
+  font-size: 5rem;
+  padding: 0 10rem;
+}
+
+.desc {
+    position: absolute;
+    color: black;
+    background-color: white;
+  padding: 0.5rem 2.5rem;
+  top:50%;
+  left:50%;
+  font-size: 3.5rem;
+  transform: translateX(-50%) translateY(-50%);
+  font-weight: 600;
+
+}
+
+.text {
+  font-size: 1.5rem;
+  padding: 0 10rem;
+  margin: 5rem 0;
+}
+.bg {
+  width: 100%;
+  position: relative;
+  background-attachment: fixed;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg1 {
+  background-image: url(sport-1.jpg);
+}
+.bg2 {
+  background-image: url(sport-2.jpg);
+}
+.bg3 {
+  background-image: url(sport-3.jpg);
+}
